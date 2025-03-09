@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps: 
-      -name: Checkout
+    - name: Checkout
       uses: actions/checkout@v4
 
-      -name: Build docker image
+    - name: Build docker image
       run: docker build -t danielrodriguess/api-journey:latest .
