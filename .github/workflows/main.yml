@@ -29,14 +29,14 @@ jobs:
     - name: Build docker image
       run: docker build -t denisoliveirab/api-journey.api:${{ steps.generate_sha.outputs.sha}} .
 
-    - name: push image
-      uses: denisoliveirab/api-journey.api
+    - name: Build and push
+      uses: docker/build-push-action@v6
       with:
         context: .
         push: true
         tags: |
           denisoliveirab/api-journey.api:${{ steps.generate_sha.outputs.sha}}
-           denisoliveirab/api-journey.api:latest
+          denisoliveirab/api-journey.api:latest
 
     # - name: Push image
     #   run: |
