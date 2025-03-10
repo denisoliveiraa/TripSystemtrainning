@@ -31,7 +31,7 @@ jobs:
 
     - name: Push image
       run: |
-       docker push danielrodenisoliveirabdriguess/api-journey.api:${{ steps.generate_sha.outputs.sha}} 
+       docker push denisoliveirab/api-journey.api:${{ steps.generate_sha.outputs.sha}} 
        docker tag denisoliveirab/api-journey.api:${{ steps.generate_sha.outputs.sha}} denisoliveirab/api-journey.api:latest
        docker push denisoliveirab/api-journey.api:latest
     
