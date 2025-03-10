@@ -27,11 +27,11 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: Build docker image
-      run: docker build -t danielrodriguess/api-journey.api:${{ steps.generate_sha.outputs.sha}} .
+      run: docker build -t denisoliveirab/api-journey.api:${{ steps.generate_sha.outputs.sha}} .
 
     - name: Push image
       run: |
-       docker push danielrodriguess/api-journey.api:${{ steps.generate_sha.outputs.sha}} 
-       docker tag danielrodriguess/api-journey.api:${{ steps.generate_sha.outputs.sha}} danielrodriguess/api-journey.api:latest
-       docker push danielrodriguess/api-journey.api:latest
+       docker push danielrodenisoliveirabdriguess/api-journey.api:${{ steps.generate_sha.outputs.sha}} 
+       docker tag denisoliveirab/api-journey.api:${{ steps.generate_sha.outputs.sha}} denisoliveirab/api-journey.api:latest
+       docker push denisoliveirab/api-journey.api:latest
     
